@@ -168,11 +168,11 @@ visitors %>%
 _Perform the same calculation for the 2021 admissions data._
 
 ```{r Ex_h}
-#visitors %>% 
-#  ______(
-#    __________,
-#    __________
-#  )
+visitors %>% 
+  summarise(
+    mean_2021 = mean(n_2021, na.rm = TRUE),
+    median_2021 = median(n_2021, na.rm = TRUE)
+  )
 ```
 
 All values in the output are `NA`!
@@ -181,7 +181,7 @@ All values in the output are `NA`!
 
 _What does `NA` stand for and why are you getting this as your answer to the previous question._
 
-**Write your answer here**
+**there are value equal to na in the original data set**
 
 
 
@@ -190,7 +190,11 @@ _What does `NA` stand for and why are you getting this as your answer to the pre
 
 _Look at the help pages for the `mean()` and `median()` commands to see what the input argument `na.rm` does. Edit your code from exercise h so that it computes the summary statistics where data is available._
 
-**Write your answer here**
+#visitors %>% 
+#  summarise(
+#    mean_2021 = mean(n_2021, na.rm #= TRUE),
+#    median_2021 = median(n_2021, #na.rm = TRUE)
+#  )
 
 
 
@@ -212,7 +216,7 @@ visitors %>%
 
 _Observe in question 6 that the mean statistics across all settings are much larger than the corresponding median statistics. Discuss in your group what this suggests about the data._
 
-**Write your answer here**
+**lots of small values, but big values are humungeous**
 
 
 
@@ -299,4 +303,10 @@ filter(visitors, attraction== "National Museum of Scotland" )
   filter(n_2022 > 100000))
 
 #3 - fountains abbey Estate, kirkstall abbey, RHS Garden Harlow carr 
+
+
+visitors_with_nations %>% 
+  count(nation)
+  
+
 
